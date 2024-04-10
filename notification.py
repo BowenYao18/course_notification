@@ -72,9 +72,11 @@ def fetch_course_info(url):
 def main():
     URL = "YOUR URL HERE"
     while True:
-        fetch_course_info(url)
-        print("Waiting for 60 minutes...")
-        time.sleep(3600)  # Wait for 3600 seconds (60 minutes)
+        if fetch_course_info(url):
+            print("Email Sent, Program exits")
+            sys.exit()
+        print("Waiting for 2 minutes...")
+        time.sleep(120)
 
 
 if __name__ == "__main__":
